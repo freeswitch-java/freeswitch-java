@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--
+        Test appender — includes method + line number so failing tests show
+        exactly which line fired. Acceptable overhead in test runs.
+
+        Example:
+          14:23:01.123  DEBUG  [com.freeswitchjava.esl.inbound.InboundHandler.dispatchEvent:112]  [EVENT] [CHANNEL_ANSWER] uuid=[abc-123]
+    -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS}  %-5level  [%logger.%M:%L]  %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.freeswitchjava" level="DEBUG"/>
+    <logger name="io.netty" level="WARN"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

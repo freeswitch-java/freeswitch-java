@@ -1,0 +1,73 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a5298;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+
+  <!-- Decorative circles (communication nodes) -->
+  <circle cx="150" cy="80" r="40" fill="none" stroke="url(#accentGradient)" stroke-width="2" opacity="0.3"/>
+  <circle cx="150" cy="80" r="30" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.2"/>
+
+  <circle cx="1050" cy="320" r="50" fill="none" stroke="url(#accentGradient)" stroke-width="2" opacity="0.3"/>
+  <circle cx="1050" cy="320" r="35" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.2"/>
+
+  <!-- Connection lines -->
+  <line x1="100" y1="200" x2="500" y2="200" stroke="#00d4ff" stroke-width="2" opacity="0.4" stroke-dasharray="5,5"/>
+  <line x1="700" y1="200" x2="1100" y2="200" stroke="#0099ff" stroke-width="2" opacity="0.4" stroke-dasharray="5,5"/>
+
+  <!-- Main icon area - stylized ESL/communication symbol -->
+  <g transform="translate(100, 160)">
+    <!-- Netty/Network concept - interconnected nodes -->
+    <circle cx="20" cy="20" r="8" fill="#00d4ff"/>
+    <circle cx="60" cy="20" r="8" fill="#00d4ff"/>
+    <circle cx="40" cy="50" r="8" fill="#00d4ff"/>
+    <line x1="20" y1="20" x2="60" y2="20" stroke="#00d4ff" stroke-width="2"/>
+    <line x1="20" y1="20" x2="40" y2="50" stroke="#00d4ff" stroke-width="2"/>
+    <line x1="60" y1="20" x2="40" y2="50" stroke="#00d4ff" stroke-width="2"/>
+  </g>
+
+  <!-- Text content -->
+  <text x="600" y="120" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">
+    FreeSWITCH Java
+  </text>
+
+  <text x="600" y="180" font-family="Arial, sans-serif" font-size="28" fill="#00d4ff" text-anchor="middle" font-weight="300">
+    Event Socket Layer (ESL) Client Library
+  </text>
+
+  <!-- Tech stack badges -->
+  <g transform="translate(600, 260)">
+    <!-- Netty badge -->
+    <rect x="-280" y="0" width="80" height="35" rx="5" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1"/>
+    <text x="-240" y="24" font-family="Arial, sans-serif" font-size="14" fill="#00d4ff" text-anchor="middle" font-weight="bold">Netty 4.1</text>
+
+    <!-- Java badge -->
+    <rect x="-180" y="0" width="70" height="35" rx="5" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1"/>
+    <text x="-145" y="24" font-family="Arial, sans-serif" font-size="14" fill="#00d4ff" text-anchor="middle" font-weight="bold">Java 21</text>
+
+    <!-- Async badge -->
+    <rect x="-90" y="0" width="90" height="35" rx="5" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1"/>
+    <text x="-45" y="24" font-family="Arial, sans-serif" font-size="14" fill="#00d4ff" text-anchor="middle" font-weight="bold">Async API</text>
+
+    <!-- Spring Boot badge -->
+    <rect x="20" y="0" width="120" height="35" rx="5" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1"/>
+    <text x="80" y="24" font-family="Arial, sans-serif" font-size="14" fill="#00d4ff" text-anchor="middle" font-weight="bold">Spring Boot</text>
+
+    <!-- TLS badge -->
+    <rect x="160" y="0" width="70" height="35" rx="5" fill="rgba(0,212,255,0.15)" stroke="#00d4ff" stroke-width="1"/>
+    <text x="195" y="24" font-family="Arial, sans-serif" font-size="14" fill="#00d4ff" text-anchor="middle" font-weight="bold">TLS/SSL</text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="390" width="1200" height="10" fill="url(#accentGradient)"/>
+</svg>

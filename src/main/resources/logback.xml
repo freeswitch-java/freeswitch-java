@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--
+                Production format — class name only, no line-number overhead.
+                %logger gives the fully-qualified class name used in getLogger(Class).
+
+                Example output:
+                  2026-04-10 14:23:01.123  INFO   [com.freeswitchjava.esl.inbound.InboundHandler]  [AUTH] OK
+                  2026-04-10 14:23:05.001  DEBUG  [com.freeswitchjava.esl.inbound.InboundHandler]  [EVENT] [CHANNEL_ANSWER] uuid=[abc-123]
+                  2026-04-10 14:23:10.500  ERROR  [com.freeswitchjava.esl.inbound.InboundClient]   [RECONNECT] FAILED — cause=[Connection refused]
+
+                NOTE: Line numbers (%L) and method names (%M) are intentionally excluded here.
+                They require JVM stack-trace inspection on every log call (~5-20x overhead).
+                Enable them only in the dev/debug appender below.
+            -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level  [%logger]  %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--
+        DEV appender — includes method name and line number for IDE click-to-navigate.
+        Swap the appender-ref below to use this in local development.
+        NEVER use in production — %M and %L are expensive.
+
+        Example output:
+          2026-04-10 14:23:01.123  INFO   [com.freeswitchjava.esl.inbound.InboundHandler.handleAuthRequest:78]  [AUTH] OK
+    -->
+    <appender name="CONSOLE_DEV" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level  [%logger.%M:%L]  %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.freeswitchjava" level="INFO"/>
+    <logger name="io.netty" level="WARN"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+        <!-- Switch to CONSOLE_DEV locally for line numbers:
+        <appender-ref ref="CONSOLE_DEV"/> -->
+    </root>
+
+</configuration>
