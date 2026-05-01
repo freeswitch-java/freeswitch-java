@@ -145,7 +145,7 @@ FreeSWITCH dialplan:
 
 ## Documentation
 
-Full documentation → **[GitHub Wiki](https://github.com/freeswitch-java/freeswitch-java/wiki)**
+Full documentation → **[GitHub Pages](https://freeswitch-java.github.io/freeswitch-java/)**
 
 ---
 
